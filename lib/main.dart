@@ -57,7 +57,19 @@ class TareaState extends State<Tarea>{
 
 class MyApp extends StatelessWidget {
 
-  var tareaejemplo = { "nombre": "Hola soy una tarea","done": true};
+  var tareaejemplo =[
+    { "nombre": "Tarea 1","done": true},
+    { "nombre": "Tarea 2","done": true},
+    { "nombre": "Tarea 3","done": true},
+    { "nombre": "Tarea 4","done": true},
+    { "nombre": "Tarea 5","done": true},
+    { "nombre": "Tarea 6","done": true},
+    { "nombre": "Tarea 8","done": true},
+    { "nombre": "Tarea 9","done": true},
+    { "nombre": "Tarea 10","done": true}
+
+
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -66,15 +78,18 @@ class MyApp extends StatelessWidget {
         appBar: AppBar(
           title: Text('Welcome to Flutter'),
         ),
-        body: Center(
-          child: Container(
+        body: ListView(
+          children:[
+            for(var t in tareaejemplo) new Tarea(t)
+          ],
+            /*Container(
               padding: EdgeInsets.all(20),
              decoration: BoxDecoration(
                color: Colors.blue,
              ),
              child: Row(
                 children: [
-                    Tarea(tareaejemplo),
+                    Tarea(tareaejemplo),*/
                   /*
 
                   if(tarea['done'])
@@ -85,11 +100,8 @@ class MyApp extends StatelessWidget {
                   Text ("  "+tarea['nombre'])
 
                    */
-                ],
               )
           )
-        ),
-      ),
     );
   }
 }
