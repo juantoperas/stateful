@@ -36,7 +36,7 @@ class TareaState extends State<Tarea>{
   @override
   Widget build(BuildContext context) {
     return Container(
-        padding: EdgeInsets.only(left:20),
+        padding: EdgeInsets.only(left:21),
         child:Row(
           children: [
             if(tst['done'])
